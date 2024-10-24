@@ -1,0 +1,16 @@
+<div class="contents">
+    <h2>card drawing page</h2>
+    <label for="amount"># of cards:</label><br>
+    <input name="amount" id="amount" type="number" value="1" #amount/><br /><br/>
+    <button (click)="draw(+amount.value)" class="submit">Draw cards</button>
+    <a [routerLink]="['/']"><button class="back">Back</button></a>
+    <div class="cardzone">
+        <h3>cards drawn</h3>
+        @for(card of drawnCards; track card.name) {
+            <div class="card">
+                <h4>{{ card.name }}</h4>
+                <p>{{ card.description }}</p>
+            </div>
+        }
+    </div>
+</div>
